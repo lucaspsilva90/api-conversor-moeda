@@ -12,7 +12,7 @@
 $ git clone https://lucassilva90@bitbucket.org/recrutamento_jya_nodejs/recrutamento-conversor-nodejs-lucas.p.silva90_hotmail.com.git
 ```
 
-*Acesse a pasta do projeto e rode os comandos:
+* Acesse a pasta do projeto e rode os comandos:
 
 ```bash
 $ npm install
@@ -20,7 +20,7 @@ $ npm install
 ```bash
 $ npm start
 ```
-*Utilize algum programa para requisições como [postman](https://www.postman.com/) ou [insomnia](https://insomnia.rest/download/)
+* Utilize algum programa para requisições como [postman](https://www.postman.com/) ou [insomnia](https://insomnia.rest/download/)
 
 ### Endpoints
 
