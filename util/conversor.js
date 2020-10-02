@@ -15,7 +15,6 @@ const getData = async url => {
 const getExchangeRate = async (currency, url) => {
     const data = await getData(url);
     const value = data.rates[currency]
-    console.log(value);
     return Number(value)
 
 }
@@ -26,7 +25,10 @@ const calculateTransaction = async (originCurrency, targetCurrency, value) => {
     let url = `https://api.exchangeratesapi.io/latest?base=${originCurrency}`;
     const exchangeRate = await getExchangeRate(targetCurrency, url)
     const result = value * exchangeRate;
-    return result
+    return {
+        exchangeRate,
+        result
+    }
 
 }
 

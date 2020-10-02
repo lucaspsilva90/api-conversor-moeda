@@ -1,7 +1,7 @@
 {
   "development": {
     "dialect": "sqlite",
-    "storage": "../conversor.db"
+    "storage": "./converter.db"
   },
   "test": {
     "username": "root",

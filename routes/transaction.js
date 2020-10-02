@@ -3,7 +3,10 @@ let router = express.Router();
 
 let transactionController = require('../controllers/Transaction')
 
-/* GET users listing. */
+//GET
 router.get('/:userId', transactionController.listByUserId);
+
+//POST
+router.post('/:userId', transactionController.store);
 
 module.exports = router;

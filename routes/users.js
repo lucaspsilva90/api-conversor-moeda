@@ -4,7 +4,7 @@ let router = express.Router();
 let userController = require('../controllers/Users')
 
 // GET
-router.get('/', userController.listaClientes);
+router.get('/', userController.list);
 
 // POST
 router.post('/', userController.store);

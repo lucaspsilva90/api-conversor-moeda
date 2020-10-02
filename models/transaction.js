@@ -16,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Transaction.init({
     id_user: DataTypes.INTEGER,
     origin_currency: DataTypes.STRING,
+    target_currency: DataTypes.STRING,
     origin_value: DataTypes.DOUBLE,
-    exchange_rate: DataTypes.DOUBLE,
+    target_value: DataTypes.DOUBLE,
     exchange_rate: DataTypes.DOUBLE
   }, {
     sequelize,

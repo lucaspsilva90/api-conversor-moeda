@@ -15,8 +15,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      target_currency:{
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       origin_value:{
         allowNull:false,
+        type: Sequelize.DOUBLE
+      },
+      target_value:{
+        allowNull: false,
         type: Sequelize.DOUBLE
       },
       exchange_rate:{

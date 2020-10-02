@@ -11,6 +11,9 @@ module.exports = {
             if(name == "" || email == ""){
                 return res.status(400).json({message:"Name and e-mail must be filled."})
             }
+
+            const user = await User.create({name,email});
+            res.status(201).json(user);
         } catch (error) {
             return res.status(500).json(error.message)
         }
