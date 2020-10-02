@@ -1,5 +1,5 @@
 const { Transaction } = require('../models');
-const calculateTransaction = require('../util/conversor');
+const calculateTransaction = require('../util/converter');
 
 
 module.exports = {
