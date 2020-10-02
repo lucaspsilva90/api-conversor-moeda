@@ -11,6 +11,18 @@ module.exports = {
       id_user: {
         type: Sequelize.INTEGER
       },
+      origin_currency:{
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      origin_value:{
+        allowNull:false,
+        type: Sequelize.DOUBLE
+      },
+      exchange_rate:{
+        allowNull: false,
+        type: Sequelize.DOUBLE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

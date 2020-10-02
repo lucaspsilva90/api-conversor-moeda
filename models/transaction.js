@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, Sequelize
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Transaction extends Model {
@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Transaction.init({
-    id_user: DataTypes.INTEGER
+    id_user: DataTypes.INTEGER,
+    origin_currency: DataTypes.STRING,
+    origin_value: DataTypes.DOUBLE,
+    exchange_rate: DataTypes.DOUBLE,
+    exchange_rate: DataTypes.DOUBLE
   }, {
     sequelize,
     modelName: 'Transaction',
