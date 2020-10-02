@@ -1,50 +1,150 @@
 # Conversor de moedas
 
-Você deverá implementar uma API Rest que seja capaz de realizar a conversão entre duas moedas
-utilizando taxas de conversões atualizadas de um serviço externo.
+Vocï¿½ deverï¿½ implementar uma API Rest que seja capaz de realizar a conversï¿½o entre duas moedas
+utilizando taxas de conversï¿½es atualizadas de um serviï¿½o externo.
 
-Para realização da conversão é necessário o ID do usuário que deseja realizar a conversão.
+Para realizaï¿½ï¿½o da conversï¿½o ï¿½ necessï¿½rio o ID do usuï¿½rio que deseja realizar a conversï¿½o.
 
-A API deverá registrar cada transação de conversão com todas as informações relacionadas e também
-disponibilizar um endpoint para consulta das transações realizadas por um usuário.
+A API deverï¿½ registrar cada transaï¿½ï¿½o de conversï¿½o com todas as informaï¿½ï¿½es relacionadas e tambï¿½m
+disponibilizar um endpoint para consulta das transaï¿½ï¿½es realizadas por um usuï¿½rio.
 
-O projeto poderá ser feito na linguagem de programação de sua preferência.
+O projeto poderï¿½ ser feito na linguagem de programaï¿½ï¿½o de sua preferï¿½ncia.
 
-1. Deve ser possível realizar a conversão entre 4 moedas no mínimo (BRL, USD, EUR, JPY);
-1. As taxas de conversão devem ser obtidas de [https://api.exchangeratesapi.io/latest?base=USD];
-1. As transações de conversão devem ser persistidas no banco de dados (embedded) contendo:
-    * ID do usuário;
+1. Deve ser possï¿½vel realizar a conversï¿½o entre 4 moedas no mï¿½nimo (BRL, USD, EUR, JPY);
+1. As taxas de conversï¿½o devem ser obtidas de [https://api.exchangeratesapi.io/latest?base=USD];
+1. As transaï¿½ï¿½es de conversï¿½o devem ser persistidas no banco de dados (embedded) contendo:
+    * ID do usuï¿½rio;
     * Moeda origem;
     * Valor origem;
     * Moeda destino;
-    * Taxa de conversão utilizada;
+    * Taxa de conversï¿½o utilizada;
     * Data/Hora UTC;
-1. Uma transação com sucesso deve retornar:
-    * ID da transação
-    * ID do usuário;
+1. Uma transaï¿½ï¿½o com sucesso deve retornar:
+    * ID da transaï¿½ï¿½o
+    * ID do usuï¿½rio;
     * Moeda origem;
     * Valor origem;
     * Moeda destino;
     * Valor destino;
-    * Taxa de conversão utilizada;
+    * Taxa de conversï¿½o utilizada;
     * Data/Hora UTC;
-1. Uma transação com falha conhecida deve retornar um erro HTTP 400 com a descrição da falha;
-1. Deverá existir um endpoint para listagem de todas as transações realizadas por usuário;
-1. Deve haver uma cobertura satisfatória de testes;
-1. Deve-se adicionar a esse arquivo explicações sobre como rodar a aplicação, e uma apresentação sobre o
-projeto: propósito, features, motivação das principais escolhas de tecnologias, e separação das camadas;
-1. Todo o código deve ser em inglês;
-1. Disponibilizar o código apenas nesse repositório, sem nenhuma cópia pública, para evitar plágio;
+1. Uma transaï¿½ï¿½o com falha conhecida deve retornar um erro HTTP 400 com a descriï¿½ï¿½o da falha;
+1. Deverï¿½ existir um endpoint para listagem de todas as transaï¿½ï¿½es realizadas por usuï¿½rio;
+1. Deve haver uma cobertura satisfatï¿½ria de testes;
+1. Deve-se adicionar a esse arquivo explicaï¿½ï¿½es sobre como rodar a aplicaï¿½ï¿½o, e uma apresentaï¿½ï¿½o sobre o
+projeto: propï¿½sito, features, motivaï¿½ï¿½o das principais escolhas de tecnologias, e separaï¿½ï¿½o das camadas;
+1. Todo o cï¿½digo deve ser em inglï¿½s;
+1. Disponibilizar o cï¿½digo apenas nesse repositï¿½rio, sem nenhuma cï¿½pia pï¿½blica, para evitar plï¿½gio;
 
-## Itens desejáveis
+## Itens desejï¿½veis
 * Logs
-* Tratamento de exceções
-* Documentação
-* Coesão de commits
+* Tratamento de exceï¿½ï¿½es
+* Documentaï¿½ï¿½o
+* Coesï¿½o de commits
 * Mensagens de commits claras
-* Configuração de lint
-* Testes unitários
-* Testes de integração
-* Documentação dos endpoints
-* Estar rodando e disponível (Ex: Heroku, ou similar)
+* Configuraï¿½ï¿½o de lint
+* Testes unitï¿½rios
+* Testes de integraï¿½ï¿½o
+* Documentaï¿½ï¿½o dos endpoints
+* Estar rodando e disponï¿½vel (Ex: Heroku, ou similar)
 * CI/CD
+
+
+# InstruÃ§Ãµes
+
+## Stack
+* NodeJs 14.7.0
+* Express
+* Sequelize
+* Sqlite3
+
+### Como rodar?
+
+```bash
+$ git clone https://lucassilva90@bitbucket.org/recrutamento_jya_nodejs/recrutamento-conversor-nodejs-lucas.p.silva90_hotmail.com.git
+```
+
+*Acesse a pasta do projeto e rode os comandos:
+
+```bash
+$ npm install
+```
+```bash
+$ npm start
+```
+*Utilize algum programa para requisiÃ§Ãµes como [postman](https://www.postman.com/) ou [insomnia](https://insomnia.rest/download/)
+
+### Endpoints
+
+#### Criando um usuario:
+
+* Realize uma requisiÃ§Ã£o POST com um json no body contendo os campos name e email.
+* url = localhost:3000/users
+
+```json
+{ 
+    "name":"Lucas",
+    "email":"lucas@teste.com"
+}
+```
+
+#### Realizando uma transaÃ§Ã£o
+
+* Para realizar uma transaÃ§Ã£o faÃ§a uma requisiÃ§Ã£o do tipo POST com um json no body contendo os campos origin_currency, target_currency, e origin_value e informando o id do usuÃ¡rio na nos parÃ¢metros da url. A transaÃ§Ã£o serÃ¡ persistida no banco e a aplicaÃ§Ã£o retornarÃ¡ um json com todas as informaÃ§Ãµes solicitadas acima.
+
+* url = localhost:300/transaction/idUsuario - substitua pelo id do usuÃ¡rio criado.
+
+* Exemplo: 
+
+```json
+{
+	"origin_currency":"BRL",
+	"target_currency":"JPY",
+	"origin_value": 5000
+} 
+```
+
+#### Consultando as transaÃ§Ãµes de um usuÃ¡rio
+
+* Para realizar uma consulta faÃ§a uma requisiÃ§Ã£o do tipo GET
+* url = localhost:300/transaction/idUsuario
+
+* Exemplo de retorno esperado:
+
+```js
+[
+  {
+    "id": 1,
+    "id_user": 1,
+    "origin_currency": "BRL",
+    "target_currency": "JPY",
+    "origin_value": 3200,
+    "target_value": 60274.9882256,
+    "exchange_rate": 18.8359338205,
+    "createdAt": "2020-10-02T02:14:22.264Z",
+    "updatedAt": "2020-10-02T02:14:22.264Z"
+  },
+  {
+    "id": 2,
+    "id_user": 1,
+    "origin_currency": "BRL",
+    "target_currency": "JPY",
+    "origin_value": 3211,
+    "target_value": 60482.1834976255,
+    "exchange_rate": 18.8359338205,
+    "createdAt": "2020-10-02T02:38:43.910Z",
+    "updatedAt": "2020-10-02T02:38:43.910Z"
+  },
+  {
+    "id": 3,
+    "id_user": 1,
+    "origin_currency": "BRL",
+    "target_currency": "JPY",
+    "origin_value": 5000,
+    "target_value": 94179.6691025,
+    "exchange_rate": 18.8359338205,
+    "createdAt": "2020-10-02T02:38:48.220Z",
+    "updatedAt": "2020-10-02T02:38:48.220Z"
+  }
+]
+```
