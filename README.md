@@ -8,10 +8,6 @@
 
 ### Como rodar?
 
-```bash
-$ git clone https://lucassilva90@bitbucket.org/recrutamento_jya_nodejs/recrutamento-conversor-nodejs-lucas.p.silva90_hotmail.com.git
-```
-
 * Acesse a pasta do projeto e rode os comandos:
 
 ```bash
